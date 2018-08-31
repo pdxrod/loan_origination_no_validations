@@ -1,8 +1,9 @@
 <a href="/">Loan Request</a>
 
 <div class="loan_form">
-  <%= form_for @user, url: '/' do |f| %>
-    <%= f.error_notification %>
+  <%= form_for @loan, url: '/' do |f| %>
+    <span style="color: #FF8000;"><%= @loan.error_notification %></span>
+    <span style="color: #008080;"><%= @loan.message %>           </span>
 
     <%= f.input :name %>
     <%= f.input :mailing_address %>
