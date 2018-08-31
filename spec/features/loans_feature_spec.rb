@@ -16,6 +16,12 @@ RSpec.describe LoansController, type: :feature do
       visit '/'
       expect(page).to have_content "Name"
     end
+
+    it "should show an error if you don't enter anything and hit submit" do
+      visit '/'
+      click_on "submit"
+      expect(page).to have_content "Please fill in the form completely"
+    end
   end
 
 end
