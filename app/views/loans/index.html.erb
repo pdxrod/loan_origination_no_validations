@@ -1,0 +1,20 @@
+<a href="/">Loan Request</a>
+
+<div class="loan_form">
+  <%= form_for @user, url: '/' do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :name %>
+    <%= f.input :mailing_address %>
+    <%= f.input :annual_income %>
+    <%= f.input :requested_loan_amount %>
+
+    <%= f.button :submit, id: "submit", class: "btn-primary" %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+    $( "#submit" ).on( "click", function()
+    {
+    } );
+</script>
