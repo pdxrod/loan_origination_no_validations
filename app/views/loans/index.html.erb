@@ -2,8 +2,10 @@
 
 <div class="loan_form">
   <%= form_for @loan, url: '/', method: :post, action: '/' do |f| %>
-    <span style="color: #FF8000;"><%= @loan.error   %></span>
-    <span style="color: #008080;"><%= @loan.message %></span>
+        <div class="messages">
+          <span style="color: #FF8000;"><%= @loan.error   %></span>
+          <span style="color: #008080;"><%= @loan.message %></span>
+        </div>
 
         <p><%= f.label :name %>
            <%= f.text_field :name %></p>

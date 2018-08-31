@@ -11,7 +11,19 @@ body {
     margin-bottom: 0px;
 }
 
+.loan_form {
+  min-height: 50%;
+  height: 400px;
+  width: 500px;
+}
+
+.messages {
+  height: 40px;
+}
+
 .outer {
+  height: 1000px;
+  width: 500px;
   margin: auto;
   margin-top: 5px;
   padding: 2px;
