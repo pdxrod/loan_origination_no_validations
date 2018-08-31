@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.describe LoansController, type: :feature do
 
@@ -7,7 +7,7 @@ RSpec.describe LoansController, type: :feature do
   end
 
   describe "testing data" do
-    it "should have the right data" do
+    it "should have the right data for testing" do
     end
   end
 
