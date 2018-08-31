@@ -2,13 +2,13 @@
 
 <div class="loan_form">
   <%= form_for @loan, url: '/' do |f| %>
-    <span style="color: #FF8000;"><%= @loan.error_notification %></span>
-    <span style="color: #008080;"><%= @loan.message %>           </span>
+    <span style="color: #FF8000;"><%= @loan.error   %></span>
+    <span style="color: #008080;"><%= @loan.message %></span>
 
-    <%= f.input :name %>
-    <%= f.input :mailing_address %>
-    <%= f.input :annual_income %>
-    <%= f.input :requested_loan_amount %>
+    <%= f.text_field :name %>
+    <%= f.text_field :mailing_address %>
+    <%= f.text_field :annual_income %>
+    <%= f.text_field :requested_loan_amount %>
 
     <%= f.button :submit, id: "submit", class: "btn-primary" %>
   <% end %>

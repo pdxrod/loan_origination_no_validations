@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_31_182016) do
+ActiveRecord::Schema.define(version: 2018_08_31_190625) do
 
   create_table "loans", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2018_08_31_182016) do
     t.integer "requested_loan_amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "error"
+    t.string "message"
   end
 
 end
