@@ -5,10 +5,14 @@
     <span style="color: #FF8000;"><%= @loan.error   %></span>
     <span style="color: #008080;"><%= @loan.message %></span>
 
-    <%= f.text_field :name %>
-    <%= f.text_field :mailing_address %>
-    <%= f.text_field :annual_income %>
-    <%= f.text_field :requested_loan_amount %>
+        <p><%= f.label :name %>
+           <%= f.text_field :name %></p>
+        <p><%= f.label :mailing_address %>
+           <%= f.text_field :mailing_address %></p>
+        <p><%= f.label :annual_income %>
+           <%= f.text_field :annual_income %></p>
+        <p><%= f.label :requested_loan_amount %>
+           <%= f.text_field :requested_loan_amount %></p>
 
     <%= f.button :submit, id: "submit", class: "btn-primary" %>
   <% end %>
