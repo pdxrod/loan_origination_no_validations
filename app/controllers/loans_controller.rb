@@ -11,7 +11,13 @@ class LoansController < ApplicationController
       if @loan.save
         @loan.message = "Loan application successful"
       else
-        @loan.error = "Please fill in the form completely"
+        messages = []
+        @loan.errors.messages.each do |k, v|
+          messages << v[ 0 ] # e.g.  annual_income: ["Please fill in the form completely"]
+        end
+        messages.uniq!
+        @loan.error = messages.join "\n"
+        @loan.save(validate: false) # Requirements include saving every effort to apply, regardless of success
       end
     end
   end
