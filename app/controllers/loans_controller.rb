@@ -16,6 +16,7 @@ class LoansController < ApplicationController
           messages << v[ 0 ] # e.g.  annual_income: ["Please fill in the form completely"]
         end
         messages.uniq!
+        messages = ["Please fill in the form completely"] if messages.include? "Please fill in the form completely"
         @loan.error = messages.join "\n"
         @loan.save(validate: false) # Requirements include saving every effort to apply, regardless of success
       end
