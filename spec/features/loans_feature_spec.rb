@@ -30,6 +30,13 @@ RSpec.describe LoansController, type: :feature do
     fill_in "loan_requested_loan_amount", with: "15000"
   end
 
+  def fill_in_with_zeros
+    fill_in "loan_name", with: "Rod McLaughlin"
+    fill_in "loan_mailing_address", with: "16409 Division"
+    fill_in "loan_annual_income", with:         "0"
+    fill_in "loan_requested_loan_amount", with: "0"
+  end
+
   describe "visiting loan page" do
     it "should show the loan page" do
       visit '/'
@@ -38,6 +45,15 @@ RSpec.describe LoansController, type: :feature do
 
     it "should show 'please fill in' if you don't enter anything and hit submit" do
       visit '/'
+      click_on "submit"
+      expect(page).to have_content "Please fill in the form completely"
+      expect(page).not_to have_content "Loan application successful"
+      expect(page).not_to have_content "Loan application unsuccessful"
+    end
+
+    it "should show 'please fill in' if you enter zeros and hit submit" do
+      visit '/'
+      fill_in_with_zeros
       click_on "submit"
       expect(page).to have_content "Please fill in the form completely"
       expect(page).not_to have_content "Loan application successful"
