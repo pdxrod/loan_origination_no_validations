@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe LoansController, type: :feature do
 
-  before do
-    Loan.delete_all
-  end
-
   def fill_in_with_too_low_loan_amount
     fill_in "loan_name", with: "Rod McLaughlin"
     fill_in "loan_mailing_address", with: "16409 Division"
